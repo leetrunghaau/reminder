@@ -1,0 +1,156 @@
+
+### đăng ký
+POST  http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+    "fullName": "Lê Trung Hậu",
+    "email":"hau1@gmail.com",
+    "userName":"Hau1235",
+    "password":"12345"
+}
+
+### đăng nhập
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+    "userName":"Hau123",
+    "password":"123456"
+}
+##################################################################################
+### tạo lable
+POST http://localhost:8080/api/lable
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "name": "Cá nhân",
+    "color":"xanh"
+}
+
+### lấy lable
+GET  http://localhost:8080/api/lables
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+
+### sửa lable
+PUT   http://localhost:8080/api/lable
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "id": 2,
+    "name": "Cá nhân",
+    "color": "tím"
+}
+
+### xóa lable
+DELETE    http://localhost:8080/api/lable/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+
+##################################################################################
+### tạo reminder
+POST http://localhost:8080/api/reminder
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "title": "lập trình di động",
+    "duration": "2024-04-28 15:30:00",
+    "note": "hoàng tahnhf công việc hôm nay",
+    "isCompleted": false,
+    "labelId": 1
+}
+
+### lấy reminder
+GET  http://localhost:8080/api/reminders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+
+### sửa reminder
+PUT   http://localhost:8080/api/reminder
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "id": 2,
+    "title": "lập trình di động",
+    "duration": "2024-04-28 15:30:00",
+    "note": "hoàng tahnhf công việc hôm nay đã sửa",
+    "isCompleted": true,
+    "labelId": 1
+}
+
+### xóa reminder
+DELETE    http://localhost:8080/api/reminder/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+##################################################################################
+### tạo notificationTime
+POST http://localhost:8080/api/notificationTime
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "value": 5,
+    "unit": "ABC",
+    "realTime": "2024-04-28",
+    "reminderId": 3
+}
+
+### lấy notificationTime
+GET  http://localhost:8080/api/notificationTimes/reminderId/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+
+### sửa notificationTime
+PUT   http://localhost:8080/api/notificationTime
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "id": 3,
+    "value": 5,
+    "unit": "ABC đã sửa",
+    "realTime": "2024-04-28",
+    "reminderId": 3
+}
+
+### xóa notificationTime
+DELETE    http://localhost:8080/api/notificationTime/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+
+###################################################################################
+### lấy thông tin cá nhân
+GET     http://localhost:8080/api/account
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+### update tin cá nhân
+PUT      http://localhost:8080/api/account
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "fullName": "Lê Trung Hậu abc",
+    "email": "hau1@gmail.com",
+    "userName": "Hau1235"
+}
+
+### lấy thông tin cá nhân
+DELETE      http://localhost:8080/api/account
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+### đổi mật khẩu
+POST      http://localhost:8080/api/changePassword
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcxNDI2NDMyNywiZXhwIjoxNzE0MzUwNzI3fQ.pAIVae4XdxsT4YXG5mWBVqi2HydBhe3axCOhTnR9NPs
+
+{
+    "oldPassword":"1234567",
+    "newPassword":"123456"
+
+}
